@@ -1,19 +1,20 @@
 import React from 'react';
 import Tour from './Tour';
-
-const Tours = ({ tours, setTours }) => {
-  const removeTour = (id) => {
-    const newTours = tours.filter((tour) => tour.id !== id);
-    setTours(newTours);
-  };
-
+ 
+const Tours = ({ tours, handleDelete }) => {
   return (
     <section>
-      {tours.map((tour) => (
-        <Tour key={tour.id} {...tour} removeTour={removeTour} />
-      ))}
+      <div className="title">
+        <h2>Our Tours</h2>
+        <div className="underline"></div>
+      </div>
+      <div>
+        {tours.map(tour => (
+          <Tour key={tour.id} {...tour} handleDelete={handleDelete} />
+        ))}
+      </div>
     </section>
   );
 };
-
+ 
 export default Tours;

@@ -40,7 +40,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div id='main'>
       <Tours tours={tours} setTours={setTours} />
     </div>
   );
